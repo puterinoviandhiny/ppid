@@ -150,9 +150,7 @@
                         <a href="#content" data-uk-scroll="duration: 500" data-uk-icon="icon: arrow-down; ratio: 2"></a>
                     </div>
 					<ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"><li></li></ul>
-
 				</div>
-
 		</section>
         <section id="content" class="uk-section uk-section-default">
 
@@ -223,12 +221,12 @@
 			<div class="uk-container uk-container-small">
                 <div class="uk-grid-large uk-child-width-1-3@s uk-flex-center uk-text-center" uk-grid>
                     <div>
-                        <a class="informasi-item" href="#">
+                        <a class="informasi-item" href="{{ url('/tata-cara-memperoleh-informasi') }}">
 						<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/book.png" data-uk-img alt="Image" width="80px" height="80px">
 						<h4 class="uk-text-bold">Tata Cara Memperoleh Informasi</h4></a>
 					</div>
                     <div>
-                        <a class="informasi-item" href="#">
+                        <a class="informasi-item" href="{{ route('permintaan.index') }}">
 						<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/checklist.png" data-uk-img alt="Image" width="80px" height="80px">
 						<h4 class="uk-text-bold">Form Permintaan Informasi</h4></a>
 					</div>
@@ -243,7 +241,7 @@
                         <h4 class="uk-text-bold">Daftar Informasi Publik</h4></a>
 					</div>
                     <div>
-                        <a class="informasi-item" href="#">
+                        <a class="informasi-item" href="https://data.pontianakkota.go.id/">
 						<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/shipping-and-delivery.png" data-uk-img alt="Image" width="80px" height="80px">
                         <h4 class="uk-text-bold">Satu Data</h4></a>
 					</div>
@@ -251,9 +249,38 @@
 			</div>
            </section>
 		<!-- BOTTOM -->
+        <div id="content" data-uk-height-viewport="expand: true">
+			<div class="uk-container uk-text-center">
+                <h4 class="uk-heading-line uk-text-bold"><span>Statistik Pengunjung</span></h4>
+				<div class="uk-grid uk-grid-divider uk-grid-medium uk-child-width-1-2 uk-child-width-1-4@l uk-child-width-1-5@xl" data-uk-grid>
+					<div>
+						<span class="uk-text-small"><span class="uk-margin-small-right uk-text-primary"></span>Pengunjung Hari Ini</span>
+						<h1 class="uk-heading-primary uk-margin-remove  uk-text-primary">{{ $visitor_today }}</h1>
+
+					</div>
+					<div>
+						<span class="uk-text-small"><span class="uk-margin-small-right uk-text-primary"></span>Pengunjung Bulan Ini</span>
+						<h1 class="uk-heading-primary uk-margin-remove uk-text-primary">{{ $visitor_month }}</h1>
+
+					</div>
+					<div>
+
+						<span class="uk-text-small"><span class="uk-margin-small-right uk-text-primary"></span>Pengunjung Tahun Ini</span>
+						<h1 class="uk-heading-primary uk-margin-remove uk-text-primary">{{ $visitor_year }}</h1>
+
+					</div>
+					<div>
+
+						<span class="uk-text-small"><span class="uk-margin-small-right uk-text-primary"></span>Total Pengunjung</span>
+						<h1 class="uk-heading-primary uk-margin-remove uk-text-primary">{{ $visitor_all }}</h1>
+
+					</div>
+				</div>
+            </div>
+        </div>
 		<!-- LOGOS -->
 
-		<div class="uk-section uk-section-small uk-section-muted">
+		<div class="uk-section uk-section-small uk-padding-top">
 
 			<div class="uk-container">
             <h4 class="uk-heading-line uk-text-bold"><span>Link Terkait</span></h4>
@@ -264,49 +291,49 @@
                 <div class="uk-slider-container uk-light">
                     <ul class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-6@m">
                                     <li>
-                                        <img src="img/link-terkait/bnr.indonesia.jpg" data-uk-img alt="Image">
+                                        <a href="#"><img src="img/link-terkait/bnr.indonesia.jpg" data-uk-img alt="Image"></a>
                                     </li>
                                     <li>
-                                        <img src="img/link-terkait/bnr_lapor-2017.png" data-uk-img alt="Image">
+                                        <a href="#"><img src="img/link-terkait/bnr_lapor-2017.png" data-uk-img alt="Image"></a>
                                     </li>
                                     <li>
-                                        <img src="img/link-terkait/bnr_sikedip_2017.png" ddata-uk-img alt="Image">
+                                        <a href="#"><img src="img/link-terkait/bnr_sikedip_2017.png" ddata-uk-img alt="Image"></a>
                                     </li>
                                     <li>
-                                        <img src="img/link-terkait/bnr_sipikalbar.png"  data-uk-img alt="Image">
+                                        <a href="#"><img src="img/link-terkait/bnr_sipikalbar.png"  data-uk-img alt="Image"></a>
                                     </li>
                                     <li>
-                                        <img src="img/link-terkait/bnr-komisi-informasi-kalbar.png"  data-uk-img alt="Image">
+                                        <a href="#"><img src="img/link-terkait/bnr-komisi-informasi-kalbar.png"  data-uk-img alt="Image"></a>
                                     </li>
                                     <li>
-                                        <img src="img/link-terkait/bnr-komisi-informasi-pusat.png" data-uk-img alt="Image">
+                                        <a href="#"><img src="img/link-terkait/bnr-komisi-informasi-pusat.png" data-uk-img alt="Image"></a>
                                     </li>
                                     <li>
-                                        <img src="img/link-terkait/bnr-ppid-bengkayangkab.png" data-uk-img alt="Image">
+                                        <a href="#"><img src="img/link-terkait/bnr-ppid-bengkayangkab.png" data-uk-img alt="Image"></a>
                                     </li>
                                     <li>
-                                        <img src="img/link-terkait/bnr-ppid-ketapangkab.png" data-uk-img alt="Image">
+                                        <a href="#"><img src="img/link-terkait/bnr-ppid-ketapangkab.png" data-uk-img alt="Image"></a>
                                     </li>
                                     <li>
-                                        <img src="img/link-terkait/bnr-ppid-kkukab.png" data-uk-img alt="Image">
+                                        <a href="#"><img src="img/link-terkait/bnr-ppid-kkukab.png" data-uk-img alt="Image"></a>
                                     </li>
                                     <li>
-                                        <img src="img/link-terkait/bnr-ppid-kotapontianak.png" data-uk-img alt="Image">
+                                        <a href="#"><img src="img/link-terkait/bnr-ppid-kotapontianak.png" data-uk-img alt="Image"></a>
                                     </li>
                                     <li>
-                                        <img src="img/link-terkait/bnr-ppid-mempawahkab.png" data-uk-img alt="Image">
+                                        <a href="#"><img src="img/link-terkait/bnr-ppid-mempawahkab.png" data-uk-img alt="Image"></a>
                                     </li>
                                     <li>
-                                        <img src="img/link-terkait/bnr-ppid-singkawangkota.png" data-uk-img alt="Image">
+                                        <a href="#"><img src="img/link-terkait/bnr-ppid-singkawangkota.png" data-uk-img alt="Image"></a>
                                     </li>
                                     <li>
-                                        <img src="img/link-terkait/bnr-ppid-sintangkab.png" data-uk-img alt="Image">
+                                        <a href="#"><img src="img/link-terkait/bnr-ppid-sintangkab.png" data-uk-img alt="Image"></a>
                                     </li>
                                     <li>
-                                        <img src="img/link-terkait/bnr-tpad-2016.png" data-uk-img alt="Image">
+                                        <a href="#"><img src="img/link-terkait/bnr-tpad-2016.png" data-uk-img alt="Image"></a>
                                     </li>
                                     <li>
-                                        <img src="img/link-terkait/kalbarprov.png" data-uk-img alt="Image">
+                                        <a href="#"><img src="img/link-terkait/kalbarprov.png" data-uk-img alt="Image"></a>
                                     </li>
                     </ul>
                 </div>
@@ -357,30 +384,6 @@
 			</div>
 		</footer>
 		<!-- /FOOTER -->
-		<!-- OFFCANVAS -->
-		<div id="offcanvas-nav" data-uk-offcanvas="flip: true; overlay: false">
-			<div class="uk-offcanvas-bar uk-offcanvas-bar-animation uk-offcanvas-slide">
-				<button class="uk-offcanvas-close uk-close uk-icon" type="button" data-uk-close></button>
-				<ul class="uk-nav uk-nav-default">
-					<li class="uk-active"><a href="#">Active</a></li>
-					<li class="uk-parent">
-						<a href="#">Parent</a>
-						<ul class="uk-nav-sub">
-							<li><a href="#">Sub item</a></li>
-							<li><a href="#">Sub item</a></li>
-						</ul>
-					</li>
-					<li class="uk-nav-header">Header</li>
-					<li><a href="#js-options"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon: table"></span> Item</a></li>
-					<li><a href="#"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon: thumbnails"></span> Item</a></li>
-					<li class="uk-nav-divider"></li>
-					<li><a href="#"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon: trash"></span> Item</a></li>
-				</ul>
-				<h3>Title</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-			</div>
-		</div>
-		<!-- /OFFCANVAS -->
 
 		<!-- JS FILES -->
 		<script src="https://cdn.jsdelivr.net/npm/uikit@latest/dist/js/uikit.min.js"></script>
@@ -392,5 +395,9 @@
 				cbpHorizontalMenu.init();
 			});
 		</script>
+        <script>
+            $.post( "{{url('api/visitor')}}", function( data ) {
+            });
+        </script>
 	</body>
 </html>

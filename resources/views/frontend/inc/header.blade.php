@@ -53,7 +53,7 @@
                 @endif
                 @endforeach
                 </ul>
-                <a class="uk-navbar-toggle uk-navbar-item uk-hidden@s" data-uk-toggle data-uk-navbar-toggle-icon href="#offcanvas-nav"></a>
+                <a href="{{ route('backpack.auth.login') }}"><button class="uk-button uk-button-primary uk-button-small">Login</button></a>
             </div>
         </nav>
     </div>

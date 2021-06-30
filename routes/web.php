@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/berita', 'BeritaController@index')->name('berita.index');
 Route::get('/berita/{id}', 'BeritaController@show')->name('berita.show');
+Route::get('/formpermintaan','FormPermintaanController@index')->name('permintaan.index');
+Route::post('/formpermintaan/store','FormPermintaanController@store')->name('permintaan.store');
+Route::get('/formkeberatan','FormKeberatanController@index')->name('keberatan.index');
 /** CATCH-ALL ROUTE for Backpack/PageManager - needs to be at the end of your routes.php file  **/
 Route::get('{page}/{subs?}', ['uses' => '\App\Http\Controllers\PageController@index'])
     ->where(['page' => '^(((?=(?!admin))(?=(?!\/)).))*$', 'subs' => '.*']);
