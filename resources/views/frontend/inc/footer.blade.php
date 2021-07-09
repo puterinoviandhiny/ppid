@@ -96,6 +96,11 @@
     });
 
 </script>
+@if (Route::getCurrentRoute()->uri == "formpermintaan")
 <script src="js/formpermintaan.js"></script>
+@endif
+@if (Route::getCurrentRoute()->uri == "formkeberatan")
+<script src="js/formkeberatan.js"></script> 
+@endif
 </body>
 </html>

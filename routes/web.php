@@ -19,6 +19,9 @@ Route::get('/berita/{id}', 'BeritaController@show')->name('berita.show');
 Route::get('/formpermintaan','FormPermintaanController@index')->name('permintaan.index');
 Route::post('/formpermintaan/store','FormPermintaanController@store')->name('permintaan.store');
 Route::get('/formkeberatan','FormKeberatanController@index')->name('keberatan.index');
+Route::post('/formkeberatan','FormKeberatanController@store')->name('keberatan.store');
+Route::get('/formkeberatan/informasi_by_nik','FormKeberatanController@informasi_by_nik')->name('keberatan.informasi_by_nik');
+Route::get('/formkeberatan/informasi_by_id','FormKeberatanController@informasi_by_id')->name('keberatan.informasi_by_id');
 /** CATCH-ALL ROUTE for Backpack/PageManager - needs to be at the end of your routes.php file  **/
 Route::get('{page}/{subs?}', ['uses' => '\App\Http\Controllers\PageController@index'])
     ->where(['page' => '^(((?=(?!admin))(?=(?!\/)).))*$', 'subs' => '.*']);
