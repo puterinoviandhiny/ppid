@@ -16,9 +16,9 @@ class Satker extends Model
     */
 
     protected $table = 'satker';
-    protected $primaryKey = 'satker_id';
+    protected $primaryKey = 'id';
     public $timestamps = true;
-    protected $guarded = ['satker_id'];
+    protected $guarded = ['id'];
     // protected $fillable = [];
     // protected $hidden = [];
     // protected $dates = [];

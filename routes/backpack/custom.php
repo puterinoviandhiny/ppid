@@ -19,4 +19,7 @@ Route::group([
     Route::crud('permintaan', 'PermintaanCrudController');
     Route::crud('jenis_informasi', 'Jenis_informasiCrudController');
     Route::crud('link_terkait', 'Link_terkaitCrudController');
+    Route::crud('pemohon', 'PemohonCrudController');
+    Route::crud('informasi-publik', 'InformasiPublikCrudController');
+    Route::crud('jangka', 'JangkaCrudController');
 }); // this should be the absolute last line of this file

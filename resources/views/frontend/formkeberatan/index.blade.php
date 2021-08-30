@@ -1,4 +1,4 @@
-@extends('frontend.layout.layout')
+@include('frontend.layout.layout')
 @include('frontend.inc.header')
 <!--/HEADER-->
 <div class="uk-container uk-container-small">

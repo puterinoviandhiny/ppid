@@ -1,4 +1,4 @@
-@extends('frontend.layout.layout')
+@include('frontend.layout.layout')
 @include('frontend.inc.header')
 
 		<!--CONTENT-->

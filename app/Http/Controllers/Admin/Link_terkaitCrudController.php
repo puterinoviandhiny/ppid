@@ -28,7 +28,7 @@ class Link_terkaitCrudController extends CrudController
     {
         CRUD::setModel(\App\Models\Link_terkait::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/link_terkait');
-        CRUD::setEntityNameStrings('link_terkait', 'link_terkaits');
+        CRUD::setEntityNameStrings('Link Terkait', 'Link Terkait');
     }
 
     /**

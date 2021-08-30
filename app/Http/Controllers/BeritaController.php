@@ -21,7 +21,8 @@ class BeritaController extends Controller{
         $data_berita = array(
             'data_berita' => Berita::where('status', 'Published')->where('slug', $id)->firstOrFail()
         );
-        return view('frontend.berita.show')->with($data_berita);
+        $latest = Berita::where('status', 'Published')->orderBy('created_at', 'desc')->get();
+        return view('frontend.berita.show', compact('latest'))->with($data_berita);
     }
 
 }

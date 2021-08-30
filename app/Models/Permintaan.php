@@ -4,8 +4,8 @@ namespace App\Models;
 
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Pemohon;
 use App\Models\Skpd;
-
 class Permintaan extends Model
 {
     use CrudTrait;
@@ -16,10 +16,10 @@ class Permintaan extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'tb_permintaan';
-    protected $primaryKey = 'id_permintaan';
+    protected $table = 'permohonan';
+    protected $primaryKey = 'id';
     public $timestamps = true;
-    protected $guarded = ['id_permintaan'];
+    protected $guarded = ['id'];
     // protected $fillable = [];
     protected $hidden = ['is_delete'];
     // protected $dates = [];
@@ -29,6 +29,10 @@ class Permintaan extends Model
     | FUNCTIONS
     |--------------------------------------------------------------------------
     */
+    public function pemohon()
+    {
+        return $this->belongsTo(Pemohon::class,'id_pemohon','id');
+    }
     public function skpd()
     {
         return $this->belongsTo(Skpd::class,'id_skpd','id');

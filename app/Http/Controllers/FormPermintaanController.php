@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Models\Permintaan;
+use App\Models\Pemohon;
 use App\Models\Skpd;
 class FormPermintaanController extends Controller{
     public function index(){
@@ -12,43 +13,34 @@ class FormPermintaanController extends Controller{
     return view('frontend.formpermintaan.index', compact('skpd'));
 
     }
+    public function store(Request $request){
+        $skpd = Skpd::all();
+        $pemohon = new Pemohon();
+        $permintaan = new Permintaan();
 
-    public function store(Request $request)
-    {
-          // validasi form
-          $this->validate($request, [
-            'scan_ktp'    => 'required|file|mimes:pdf,docx,xlx,csv,jpeg'
-        ]);
+        $pemohon->nama = $request->input('nama');
+        $pemohon->nik = $request->input('nik');
+        $pemohon->alamat = $request->input('alamat');
+        $pemohon->email = $request->input('email');
+        $pemohon->telepon = $request->input('telepon');
+        $pemohon->kategori_pemohon = $request->input('kategori_pemohon');
+        $pemohon->pekerjaan = $request->input('pekerjaan');
+        $pemohon->file_ktp = $request->file('file_ktp');
+        $pemohon->file_akta = $request->file('file_akta');
 
-        dd('test');
-        // upload gambar
-        $file = $request->file('scan_ktp');
-        $fileName = str_replace(" ","_",$request->input('noktp')).time().'.'.$file->getClientOriginalExtension();
-        $file->move(public_path("/uploads/ktp/"), $fileName);
-        $request->request->add([
-            'doc'     => 'uploads/ktp/'.$fileName
-        ]);
+        $pemohon->save();
 
-        $form = new Permintaan();
+        $permintaan->id_skpd = $request->input('id_skpd');
+        $permintaan->kode_permohonan = $request->input('kode_permohonan');
+        $permintaan->rincian = $request->input('rincian');
+        $permintaan->tindak_lanjut = $request->input('tindak_lanjut');
+        $permintaan->cara = $request->input('cara');
+        $permintaan->tujuan = $request->input('tujuan');
 
-        $form->id_skpd = request('id_skpd');
-        $form->pemohon = request('pemohon');
-        $form->kelamin = request('kelamin');
-        $form->usia = request('usia');
-        $form->noktp = request('noktp');
-        $form->scan_ktp = $request->file('scan_ktp');
-        $form->alamat = request('alamat');
-        $form->pekerjaan = request('pekerjaan');
-        $form->telepon = request('telepon');
-        $form->fax = request('fax');
-        $form->email = request('email');
-        $form->informasi_diminta = request('informasi_diminta');
-        $form->alasan = request('alasan');
-        $form->cara = request('cara');
-        $form->id_tindak_lanjut = request('id_tindak_lanjut');
-        $form->url_file = $request->doc;
-        $form->save();
+        $permintaan->pemohon()->associate($pemohon);
+        $permintaan->skpd()->associate($permintaan);
+        $permintaan->save();
 
-        return view('frontend.formpermintaan.index')->with('flag', 1);
+        return view('frontend.formpermintaan.index', compact('skpd'))->with('flag',1);
     }
 }
