@@ -231,7 +231,7 @@
 						<h4 class="uk-text-bold">Form Permintaan Informasi</h4></a>
 					</div>
                     <div>
-                        <a class="informasi-item" href="#">
+                        <a class="informasi-item" href="{{ route('keberatan.index') }}">
 						<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/customer.png" data-uk-img alt="Image" width="80px" height="80px">
 						<h4 class="uk-text-bold">Form Pernyataan Keberatan</h4></a>
 					</div>

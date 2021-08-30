@@ -13,14 +13,16 @@
     <p>Terima kasih telah mengisi formulir permintaan informasi</p>
 </div>
 @endif
+<!--ARTICLE-->
+<h2 class="uk-heading-line uk-text-center"><span>Form Permintaan Informasi</span></h2>
 <section class="uk-section uk-article">
     <div class="uk-container uk-container-small">
-        <form class="uk-form-stacked" action="{{ route('permintaan.store') }}" method="POST" enctype="multipart/form-data">@csrf
-            <div class="uk-column-1-2">
+        <form class="uk-form-stacked" action="{{ route('permintaan.store') }}" method="POST" enctype="multipart/form-data" id="formSubmitPermintaan">
+            @csrf
             <div class="uk-margin">
                 <label class="uk-form-label" for="form-stacked-select" required>SKPD Tujuan</label>
                 <div class="uk-form-controls">
-                    <select class="uk-select" id="form-stacked-select" name="id_skpd">
+                    <select class="uk-select select2" id="form-stacked-select" name="id_skpd">
                         @foreach ($skpd as $data)
                         <option value="{{ $data->id }}">{{ $data->nama }}</option>
                         @endforeach
@@ -62,7 +64,7 @@
                     <input class="uk-input" id="form-stacked-text" type="number" name="nik">
                 </div>
             </div>
-            <div class="uk-margin">
+            <div class="form-group">
                 <label class="uk-form-label" for="form-stacked-text">Scan KTP</label>
                 <div class="uk-margin" uk-margin>
                     <div uk-form-custom="target: true">

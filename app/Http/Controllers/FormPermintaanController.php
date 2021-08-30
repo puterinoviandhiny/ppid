@@ -6,12 +6,11 @@ use DB;
 use App\Models\Permintaan;
 use App\Models\Pemohon;
 use App\Models\Skpd;
+use App\CekKTP;
 class FormPermintaanController extends Controller{
     public function index(){
-
-    $skpd = Skpd::all();
-    return view('frontend.formpermintaan.index', compact('skpd'));
-
+        $skpd = Skpd::all();
+        return view('frontend.formpermintaan.index', compact('skpd'));
     }
     public function store(Request $request){
         $skpd = Skpd::all();
